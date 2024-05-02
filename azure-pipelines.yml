@@ -35,4 +35,11 @@ steps:
     configuration: '$(buildConfiguration)'
 
 
+resources:
+  repositories:
+    - repository: HICrew
+      type: github
+      name: HannahBandana/HICrew
+      ref: refs/heads/main
+      endpoint: HannahBandana  # Use the actual name of your service connection
 
