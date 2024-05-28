@@ -1,4 +1,6 @@
-﻿namespace HICrew
+﻿using Microsoft.Maui.Controls;
+
+namespace HICrew
 {
     public partial class App : Application
     {

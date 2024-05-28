@@ -1,4 +1,4 @@
-﻿<?xml version = "1.0" encoding = "UTF-8" ?>
+﻿<?xml version="1.0" encoding="utf-8" ?>
 <Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:HICrew"
@@ -9,6 +9,57 @@
                 <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
                 <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
             </ResourceDictionary.MergedDictionaries>
+
+            <!-- Sunset Colors -->
+            <Color x:Key="DeepSeaBlue">#00659d</Color>
+            <Color x:Key="DuskBlue">#00aabc</Color>
+            <Color x:Key="SandYellow">#e2c58a</Color>
+            <Color x:Key="SoftCoral">#fc8890</Color>
+            <Color x:Key="WarmEvening">#b35d7f</Color>
+            <!-- Tropical Mix -->
+            <Color x:Key="JungleGreen">#223C20</Color>
+            <Color x:Key="BrightLime">#709e01</Color>
+            <Color x:Key="SunnyYellow">#D5FB00</Color>
+            <Color x:Key="TropicalPink">#DE60CA</Color>
+            <Color x:Key="RichMagenta">#882380</Color>
+            <!-- Fresh Greens -->
+            <Color x:Key="DeepForestGreen">#264301</Color>
+            <Color x:Key="VibrantLeafGreen">#5c8a03</Color>
+            <Color x:Key="LimeGreen">#82b21e</Color>
+            <Color x:Key="LightLimeGreen">#d6f58e</Color>
+            <Color x:Key="PaleSpringGreen">#d3e3b6</Color>
+            <!-- Ocean blues -->
+            <Color x:Key="DeepOceanBlue">#012E4A</Color>
+            <Color x:Key="RichMarine">#036280</Color>
+            <Color x:Key="ClearSkyBlue">#378BA4</Color>
+            <Color x:Key="SoftSkyBlue">#81BECE</Color>
+            <Color x:Key="PaleBlueSky">#EBEDE7</Color>
+
+            <Color x:Key="TrueBlack">#000000</Color>
+            <!-- Pure black -->
+
+            <!-- Define a simple style for a Button -->
+            <Style x:Key="MyButtonStyle" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="Navy"/>
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+            </Style>
+
+            <!-- Defining a style for Headlines -->
+            <Style x:Key="Headline" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource ClearSkyBlue}"/>
+                <Setter Property="FontSize" Value="24"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="HorizontalTextAlignment" Value="Center"/>
+            </Style>
+            
+            <!-- Defining a style for Subheadings -->
+            <Style x:Key="Subheading" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource RichMagenta}"/>
+                <Setter Property="FontSize" Value="18"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="HorizontalTextAlignment" Value="Center"/>
+            </Style>
         </ResourceDictionary>
     </Application.Resources>
 </Application>
