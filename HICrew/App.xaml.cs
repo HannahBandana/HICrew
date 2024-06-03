@@ -1,14 +1,14 @@
-﻿using Microsoft.Maui.Controls;
-
-namespace HICrew
+﻿namespace HICrew
 {
     public partial class App : Application
     {
         public App()
         {
-            InitializeComponent();
+            //Register Syncfusion license
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MzIyMjU0OEAzMjM1MmUzMDJlMzBVTUVmWG5SWlJjc0VwY3FVRngyb1pwVjNRdXYxdmx2SkFURjlGRUpMRmdVPQ==");
 
-            MainPage = new AppShell();
+            InitializeComponent();
+            MainPage = new NavigationPage(new MainPage());
         }
     }
 }

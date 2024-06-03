@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HICrew.DatabaseView"
+             xmlns:local="clr-namespace:HICrew"
+             xmlns:system="clr-namespace:System;assembly=netstandard"
+             NavigationPage.HasNavigationBar="False"
+             >
+
+    <ContentPage.Content>
+        <ContentView>
+            <ContentView.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#01efcd" Offset="0.35"/>
+                    <GradientStop Color="#0a6e90" Offset="1"/>
+                </LinearGradientBrush>
+            </ContentView.Background>
+
+            <Grid ColumnDefinitions="0.4*, 0.6*">
+
+                <Border Grid.ColumnSpan="{OnPlatform Default=2, WinUI=1, MacCatalyst=1}" Stroke="Transparent">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="0,0,0,0"/>
+                    </Border.StrokeShape>
+
+                    <Image Source="logowhite.png" Grid.Row="0"  Grid.Column="0"  
+                           HorizontalOptions="Center"  Aspect="AspectFit" WidthRequest="350"/>
+                </Border>
+
+                <Frame CornerRadius="10" Grid.Column="{OnPlatform Default=0, WinUI=1, MacCatalyst=1}"  BorderColor="White" HeightRequest="500" Background="White"
+                      Grid.Row="{OnPlatform Default=1, WinUI=0,MacCatalyst=0}" 
+                      WidthRequest="700" VerticalOptions="{OnPlatform Default=Start, WinUI=Center , MacCatalyst=Center}"
+                      Grid.ColumnSpan="{OnPlatform Default=2, WinUI=1, MacCatalyst=1}" 
+                      Grid.RowSpan="{OnPlatform Default=1, WinUI=2, MacCatalyst=2}">
+
+                    <Grid IsClippedToBounds="True" HeightRequest="450" >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="75"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <Label Padding="30,10,0,0" HorizontalOptions="Start" 
+                               VerticalTextAlignment="Center">
+
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="Azure Database Connection" TextColor="Black" FontSize="25" FontAttributes="Bold"/>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+
+                        <ListView x:Name="SeafarerListView" ItemsSource="{Binding Seafarers}">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <Label Text="{Binding .}" Style="{StaticResource Subheading}" />
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </Grid>
+                </Frame>
+
+            </Grid>
+        </ContentView>
+    </ContentPage.Content>
+</ContentPage>

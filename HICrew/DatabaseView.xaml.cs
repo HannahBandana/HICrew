@@ -1,21 +1,20 @@
-﻿using HICrew.Services;
+using HICrew.Services;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 
 namespace HICrew
 {
-    public partial class MainPage : ContentPage
-    {
+	public partial class DatabaseView
+	{
         private DatabaseService _dbService = new DatabaseService();
         public ObservableCollection<string> Seafarers { get; set; } = new ObservableCollection<string>();
-
-        public MainPage()
-        {
-            InitializeComponent();
-            LoadSeafarers();
+        public DatabaseView()
+		{
+			InitializeComponent();
+            //LoadSeafarers();
         }
 
-        private async void LoadSeafarers()
+		private async void LoadSeafarers()
         {
             var names = await _dbService.GetSeafarerNamesAsync();
             foreach (var name in names)
@@ -24,6 +23,6 @@ namespace HICrew
             }
             BindingContext = this;
         }
+
     }
 }
-
